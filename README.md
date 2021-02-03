@@ -1,6 +1,22 @@
 Welcome to the Brickhouse
 =========================
 
+This repository has been forked from https://github.com/klout/brickhouse.
+
+- Extended udf 'from_json' as 'from_json_skip_corrupt_records' to skip corrupted json records
+```$xslt
+CREATE TEMPORARY FUNCTION from_json_skip_corrupt_records AS 'brickhouse.udf.json.FromJsonSkipCorruptRecordsUDF';
+```
+
+- Build instructions
+```$xslt
+mvn clean install -DskipTests -Dmaven.javadoc.skip=true
+```
+
+- It will generate 'brickhouse-0.7.1-bsftds.jar' jar under target directory
+
+--------------
+
 [![Build Status](https://travis-ci.org/klout/brickhouse.svg?branch=master)](https://travis-ci.org/klout/brickhouse)
 
    Brickhouse is a collection of UDF's for Hive to improve developer 
